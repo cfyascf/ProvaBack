@@ -1,4 +1,5 @@
 const express = require('express');
+const dotenv = require('dotenv/config');
 const app = express();
 
 const cors = require('cors');
@@ -6,8 +7,8 @@ app.use(cors({
     origin: '*'
 }));
 
-require('./startup/db')();
-require('./startup/routes')(app);
+require('./app/startup/db')();
+require('./app/startup/routes')(app);
 
 
 const port = 8080;

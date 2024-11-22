@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const config = require('config')
 
 module.exports = function () {
-    const db = config.get('db');
+    const db = String(process.env.DATABASE_URL);
+    console.log(db)
     mongoose.connect(db)
         .then(() => console.log(`connected to ${db}`));
 }
