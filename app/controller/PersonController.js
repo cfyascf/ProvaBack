@@ -35,7 +35,7 @@ class PersonController {
         if (!id)
             return res.status(400).send({ message: "No id provider" });
         try {
-            await Person.findByIdAndRemove(id);
+            await Person.findByIdAndDelete(id);
             return res.status(200).send({ message: "Person deleted successfully" })
         } catch (error) {
             console.log(error);
